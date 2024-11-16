@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppEventos.Views.CadastroEvento"
+             Title="Cadastro de Evento"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#F0F0F0"
+             WidthRequest="400"
+             HeightRequest="600">
+
+    <ContentPage.BindingContext>
+        <models:Evento xmlns:models="clr-namespace:MauiAppEventos.Models" />
+    </ContentPage.BindingContext>
+
+    <ScrollView Padding="10">
+        <StackLayout Spacing="10">
+
+
+            <Label Text="Cadastro de Evento"
+                   FontSize="22"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="#34495E"
+                   Margin="0,0,0,10"/>
+
+
+            <Frame BorderColor="#BDC3C7" BackgroundColor="#ECF0F1" CornerRadius="12" Padding="10" HasShadow="True">
+                <StackLayout>
+                    <Label Text="Nome do Evento" FontSize="14" TextColor="#34495E"/>
+                    <Entry Text="{Binding Nome}" Placeholder="Digite o nome do evento" />
+                </StackLayout>
+            </Frame>
+
+
+            <Frame BorderColor="#BDC3C7" BackgroundColor="#ECF0F1" CornerRadius="12" Padding="10" HasShadow="True">
+                <StackLayout>
+                    <Label Text="Data de Início" FontSize="14" TextColor="#34495E"/>
+                    <DatePicker x:Name="data_inicio" Format="dd/MM/yyyy" Date="{Binding DataInicio}" />
+                </StackLayout>
+            </Frame>
+
+
+            <Frame BorderColor="#BDC3C7" BackgroundColor="#ECF0F1" CornerRadius="12" Padding="10" HasShadow="True">
+                <StackLayout>
+                    <Label Text="Data de Término" FontSize="14" TextColor="#34495E"/>
+                    <DatePicker x:Name="data_termino" Format="dd/MM/yyyy" Date="{Binding DataTermino}" />
+                </StackLayout>
+            </Frame>
+
+
+            <Frame BorderColor="#BDC3C7" BackgroundColor="#ECF0F1" CornerRadius="12" Padding="10" HasShadow="True">
+                <StackLayout>
+                    <Label Text="Número de Participantes" FontSize="14" TextColor="#34495E"/>
+                    <Entry Keyboard="Numeric" Text="{Binding NumeroParticipantes}" Placeholder="Digite o número de participantes"
+                           />
+                </StackLayout>
+            </Frame>
+
+
+            <Frame BorderColor="#BDC3C7" BackgroundColor="#ECF0F1" CornerRadius="12" Padding="10" HasShadow="True">
+                <StackLayout>
+                    <Label Text="Local do Evento" FontSize="14" TextColor="#34495E"/>
+                    <Entry Text="{Binding Local}" Placeholder="Digite o local do evento" />
+                </StackLayout>
+            </Frame>
+
+
+            <Frame BorderColor="#BDC3C7" BackgroundColor="#ECF0F1" CornerRadius="12" Padding="10" HasShadow="True">
+                <StackLayout>
+                    <Label Text="Custo por Participante" FontSize="14" TextColor="#34495E" 
+                           />
+                    <Entry Keyboard="Numeric" Text="{Binding CustoPorParticipante}" Placeholder="Digite o custo por participante"
+                           />
+
+                </StackLayout>
+            </Frame>
+
+
+            <Button Text="Cadastrar Evento" 
+                    BackgroundColor="#3498DB"
+                    TextColor="White" 
+                    Padding="10"
+                    CornerRadius="10"
+                    FontSize="16"
+                    HeightRequest="40"
+                    Clicked="OnCadastrarEventoClicked"
+                    VerticalOptions="End" />
+
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
